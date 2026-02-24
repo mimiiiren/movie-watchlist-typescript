@@ -87,12 +87,12 @@ export default function MovieList({ category, title }: Props) {
             onRatingClick={handleFilter}
             ratings={[6, 7, 8]}
           />
-          <select className="bg-white text-black rounded-sm text-sm" name="by" onChange={handleSort} value={sort.by}>
+          <select className="bg-white text-gray-600 rounded-sm text-sm" name="by" onChange={handleSort} value={sort.by}>
             <option value="default">Sort By</option>
             <option value="release_date">Date</option>
             <option value="vote_average">Rating</option>
           </select>
-          <select className="bg-white text-black rounded-sm mr-2 text-sm" name="order" onChange={handleSort} value={sort.order}>
+          <select className="bg-white text-gray-600 rounded-sm mr-2 text-sm" name="order" onChange={handleSort} value={sort.order}>
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>
           </select>

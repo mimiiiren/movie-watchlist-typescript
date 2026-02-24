@@ -1,4 +1,19 @@
 @import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
 body{
-    font-family: 'Times New Roman', Times, serif
+    color: gray;
+    font-family: 'Times New Roman', Times, serif;
+}
+.darkMode {
+    background-color: black;
+    color: white;
+} 
+.darkMode h1 {
+    color:#FFDE21;
+}
+.darkMode h2 {
+    color: white;
+}
+.darkMode nav {
+    border-bottom: 2px solid white;
 }
