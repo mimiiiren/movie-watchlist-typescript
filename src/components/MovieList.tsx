@@ -1,6 +1,5 @@
 import FilterGroup from "./FilterGroup";
 import MovieCard from "./MovieCard";
-import "./MovieList.css";
 import { useEffect, useState } from "react";
 interface MovieAPI {
   id: number;
@@ -79,27 +78,27 @@ export default function MovieList({ category, title }: Props) {
   }, [sort]);
   return (
     <section className="movieList" id={category}>
-      <header className="movieList-header">
-        <h2 className="movieList-heading">{title}</h2>
-        <div className="movieList-filter">
+      <header className="flex justify-between">
+        <h2 className="text-2xl font-bold mb-4 mx-2">{title}</h2>
+        <div className="flex gap-3 items-center cursor-pointer">
           {/* React naming conventions: use onEvent pattern for callback props, not handleFilter */}
           <FilterGroup
             minRating={minRating}
             onRatingClick={handleFilter}
             ratings={[6, 7, 8]}
           />
-          <select name="by" onChange={handleSort} value={sort.by}>
+          <select className="bg-white text-black rounded-sm text-sm" name="by" onChange={handleSort} value={sort.by}>
             <option value="default">Sort By</option>
-            <option value="release_date">Release Date</option>
+            <option value="release_date">Date</option>
             <option value="vote_average">Rating</option>
           </select>
-          <select name="order" onChange={handleSort} value={sort.order}>
+          <select className="bg-white text-black rounded-sm mr-2 text-sm" name="order" onChange={handleSort} value={sort.order}>
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>
           </select>
         </div>
       </header>
-      <div className="movieList-cards">
+      <div className="flex flex-wrap justify-evenly mx-3 gap-y-3">
         {filteredMovies.map((item) => (
           <MovieCard movie={item} key={item.id} />
         ))}

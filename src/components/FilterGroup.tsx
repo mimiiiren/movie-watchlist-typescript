@@ -7,7 +7,7 @@ type Props = {
 } 
 export default function FilterGroup({ onRatingClick, minRating, ratings }: Props) {
   return (
-    <ul className="movieList-ratings">
+    <ul className="flex text-wrap gap-2">
       {ratings.map((rate) => (
         <li
           style={{ borderBottom: minRating === rate ? "solid" : "none" }}
